@@ -1,4 +1,70 @@
 body, html {
   box-sizing: border-box;
   margin: 0 auto;
+  padding: 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 8vh;
+  background-color: rgb(49, 94, 5);
+  font-family: 'Noto Sans JP', 'Times New Roman', Times, serif;
+
+}
+
+.logo {
+  color: rgb(red, green, blue);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.nav-links {
+  display: flex;
+  background-color: inherit;
+  justify-content: space-around;
+  width: 40%;
+  margin: 0;
+}
+
+.nav-links li {
+  list-style: none;
+}
+
+.nav-links a {
+  color: rgb(226,226,226);
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.burger div {
+  width: 25px;
+  height: 5px;
+  background-color: white;
+  margin: 3px;
+}
+@media screen and (max-width: 1024px) {
+  .nav-links {
+    width: 40%;
+  }
+}
+@media screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+  .nav-links {
+    position: absolute;
+    right: 0px;
+    height: 92vh;
+    top: 8vh;
+    background-color: rgb(49, 94, 5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    transform: translateX(100%);
+  }
 }
