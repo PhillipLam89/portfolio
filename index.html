@@ -1,34 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio</title>
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
-  <link href="styles.css" rel="stylesheet">
+  <title>Phillip Lam Portfolio Website</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+    integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
 </head>
+
 <body>
-  <nav>
+  <header>
     <div class="logo">
-      <h4>My Portfolio</h4>
+      <img width="250px" src="img/phil.jpg" alt="phillip-lam picture">
     </div>
-    <ul class="nav-links">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Work</a></li>
-      <li><a href="#">Projects</a></li>
-    </ul>
-    <div class="burger">
-      <div class="line1"></div>
-      <div class="line2"></div>
-      <div class="line3"></div>
+    <button class="nav-toggle" aria-label="toggle navigation">
+      <span class="hamburger"></span>
+    </button>
+    <nav class="nav">
+      <ul class="nav__list">
+        <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
+        <li class="nav__item"><a href="#services" class="nav__link">My Services</a></li>
+        <li class="nav__item"><a href="#" class="nav__link">About me</a></li>
+        <li class="nav__item"><a href="#" class="nav__link">My Work</a></li>
+      </ul>
+    </nav>
+  </header>
 
+   <!-- Intro Section -->
+  <section class="intro" id="home">
+    <h1 class="section__title section__title--intro">
+      Hi, I am <strong>Phillip Lam</strong>
+    </h1>
+    <p class="section__subtitle section__subtitle--intro">front end dev</p>
+    <img width="250px" src="img/phil.jpg" alt="profile-pic">
+  </section>
+
+  <!-- My services section -->
+
+  <section class="my-services" id="services">
+    <h2 class="section__title section_title--services">What I do</h2>
+    <div class="services">
+
+      <div class="service">
+        <h3></h3>
+      </div>
+
+      <div class="service">
+        <h3></h3>
+      </div>
+
+      <div class="service">
+        <h3></h3>
+      </div>
     </div>
-  </nav>
-
-
-  <script src="main.js"></script>
+    <a href="#work" class="btn">My Work</a>
+  </section>
 </body>
+
 </html>
