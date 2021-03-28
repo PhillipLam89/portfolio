@@ -1,20 +1,23 @@
- (function navSlide() {
-   const burger = document.querySelector('.burger')
-   const nav = document.querySelector('.nav-links')
-   const navLinks = document.querySelectorAll('.nav-links li')
+const navToggle = document.querySelector('.nav-toggle');
+const navItems = document.querySelectorAll('.nav__item')
+const navLinks = document.querySelectorAll('.nav__link')
+const body = document.querySelector('body');
 
+navToggle.addEventListener('click', () => {
 
-    // clickin burger icon toggles navbar slide-in on mobile
-   burger.addEventListener('click', () => {
-     nav.classList.toggle('nav-active')
+  document.body.classList.toggle('nav-open');
+  navItems.forEach((link, index) => {
+    link.style.animation ? link.style.animation = '' : link.style.animation = `navLinkFade 1.5s ease forwards ${index + 1 * index / 7 + 1}s`
+  })
 
-     // using each nav links' index will allow individual links to slide in at different time intervals
-     navLinks.forEach((link, index) => {
-       link.style.animation ? link.style.animation = '' : link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.65}s`
+});
 
-     })
+navItems.forEach(link => {
+  link.addEventListener('click', () => {
+    document.body.classList.remove('nav-open');
+    navItems.forEach(link => {
+      link.style.animation = ''
+    })
+  })
 
-     //burger logo animation
-     burger.classList.toggle('toggle')
-   })
- })()
+})
