@@ -323,7 +323,7 @@ header {
 }
 
 /* spinning image */
-@keyframes spin01{
+@keyframes spin{
     0%{
         transform: rotate(0deg);
     }
@@ -331,7 +331,7 @@ header {
         transform: rotate(360deg);
     }
 }
-@keyframes zoomOutIn01{
+@keyframes zoomOutIn{
     0%,100%{
         transform: scale(1);
     }
@@ -371,16 +371,15 @@ header {
 }
 .home-img-inner img{
     width: 100%;
-    animation: zoomOutIn01 7s linear infinite;
+    animation: zoomOutIn 10s linear infinite;
 }
 .home-course{
     position: absolute;
-    left:0;
-    top:0;
+
     width: 100%;
     height: 100%;
     z-index: 1;
-    animation: spin01 30s linear infinite;
+    animation: spin 30s linear infinite;
 }
 .home-course-item{
     position: absolute;
@@ -397,26 +396,23 @@ header {
 }
 .home-course-item:nth-child(1){
     left:-40px;
-    top:calc(50% - 40px);
+    top:calc(50% - 2.5rem);
     background-color: red;
 }
 .home-course-item:nth-child(2){
     right:-40px;
-    top:calc(50% - 40px);
+    top:calc(50% - 2.5rem);
     background-color: royalblue;
 }
 .home-course-item:nth-child(3){
     top:-40px;
-    left: calc(50% - 40px);
+    left: calc(50% - 2.5rem);
     background-color: coral;
 }
 .home-course-item:nth-child(4){
     bottom:-40px;
-    left: calc(50% - 40px);
+    left: calc(50% - 2.5rem);
     background-color: purple;
-}
-.home-course-item:nth-child(5){
-    background-color: teal;
 }
 
 
@@ -511,28 +507,136 @@ header {
 }
 
 /* My Work */
+.row
+ {
+    display: flex;
+    justify-content: space-evenly;
+}
+.section-title {
+    display: flex;
+    padding-bottom: 1rem;
 
-.my-work {
+
+}
+@media(max-width:575px){
+
+    .my-work-item{
+        width: calc(100% - 30px);
+    }
+}
+
+.my-work-section{
+    background-color: lightcyan;
+    padding-bottom: 50px;
+    overflow-x: auto;
+}
+.my-work-item{
+    min-width: 150px;
+    max-width: 400px;
+    background-color: red;
+    width: calc((100% / 3) - 30px);
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 4px;
+    z-index: 1;
+    position: relative;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);;
+}
+.my-work-item::before,
+.my-work-item::after{
+    content: '';
+    position: absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height: 100%;
+    background-color: rgb(126, 235, 99);
+    z-index: 2;
+    transition: all 1.5s ease;
+}
+.my-work-item:hover::before{
+    transform: scale(1,0);
+}
+.my-work-item:hover::after{
+    transform: scale(0,1);
+}
+
+.project-1::before,
+.project-1::after{
+    content: 'Hotels App \f594';
+    font-family: "Font Awesome 5 Free";
+    text-align: center;
+    font-size: 2rem;
+    font-weight: var(--fw-bold);
+    position: absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height: 100%;
+
+    transition: all 1.5s ease;
+}
+
+.project-2::before,
+.project-2::after{
+    content: 'Calculator App \f1ec';
+    font-family: "Font Awesome 5 Free";
+    text-align: center;
+    font-size: 2rem;
+    font-weight: var(--fw-bold);
+    position: absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height: 100%;
+
+    transition: all 1.5s ease;
+}
+.project-3::before,
+.project-3::after{
+    content: 'Cocktails App \f561';
+    font-family: "Font Awesome 5 Free";
+    text-align: center;
+    font-size: 2rem;
+    font-weight: var(--fw-bold);
+    position: absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height: 100%;
+
+    transition: all 1.5s ease;
+}
+
+.my-work-item h3{
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    text-transform: capitalize;
+    margin:0 0 10px;
+}
+
+/* .my-work {
     background-color: rgb(27, 216, 216);
     color: var(--clr-light);
     text-align: center;
+    width: 100%;
 }
-
-
-
 
 .portfolio {
     display: flex;
+    justify-content: space-evenly
 }
 
 .portfolio__item {
     background: var(--clr-accent);
     overflow: hidden;
+
 }
 
 .portfolio__img {
     padding: 5px;
-
+    min-height: 100%;
     transition:
         transform 1000ms ease-in-out
 
@@ -547,7 +651,12 @@ header {
  {
     transform: scale(1.2);
     opacity: .8;
-}
+} */
+
+
+
+
+
 
 /* footer section */
 
