@@ -279,12 +279,18 @@ header {
 .intro__img {
     box-shadow: var(--bs);
     border-radius: 30%;
+    transform: translateY(-3.5rem);
 }
 
 .section__subtitle--intro {
     display: inline-block;
 }
+@media (max-width: 599px) {
+    .intro__img {
 
+    transform: translateY(0);
+}
+}
 @media (min-width: 600px) {
     .intro {
         display: grid;
@@ -302,6 +308,7 @@ header {
         min-width: 250px;
         position: relative;
         z-index: 2;
+
     }
 
     .section__subtitle--intro {
