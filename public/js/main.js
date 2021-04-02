@@ -53,28 +53,35 @@ let message = document.getElementById('message')
 contactForm.addEventListener('submit', (e) => {
   e.preventDefault()
 
-  let formData = {
-      name: name.value,
-      email: email.value,
-      subject: subject.value,
-      message: message.value
-  }
+  let formData = new FormData(contactForm)
+  fetch('/', {
+    method: 'POST',
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams(formData).toString()
+    }).then(() => console.log('Form successfully submitted')).catch((error) =>
+    alert(error))
+  // let formData = {
+  //     name: name.value,
+  //     email: email.value,
+  //     subject: subject.value,
+  //     message: message.value
+  // }
 
 
-  let xhr =  new XMLHttpRequest()
-  xhr.open('POST', '/')
-  xhr.setRequestHeader('content-type', 'application/json')
-  xhr.onload = function() {
-    console.log(xhr.responseText)
-    if (xhr.responseText === 'success') {
-      alert('sent')
-      name.value = ''
-      email.value = ''
-      subject.value = ''
-      message.value = ''
-    } else {
-      alert('UH OH SUMTHIN WONG')
-    }
-  }
-  xhr.send(JSON.stringify(formData))
+  // let xhr =  new XMLHttpRequest()
+  // xhr.open('POST', '/')
+  // xhr.setRequestHeader('content-type', 'application/json')
+  // xhr.onload = function() {
+  //   console.log(xhr.responseText)
+  //   if (xhr.responseText === 'success') {
+  //     alert('sent')
+  //     name.value = ''
+  //     email.value = ''
+  //     subject.value = ''
+  //     message.value = ''
+  //   } else {
+  //     alert('UH OH SUMTHIN WONG')
+  //   }
+  // }
+  // xhr.send(JSON.stringify(formData))
 })
