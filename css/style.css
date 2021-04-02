@@ -18,7 +18,10 @@ a:focus {
 }
 
 html {
+    display: block;
+    justify-content: center;
     scroll-behavior: smooth;
+
 }
 
 
@@ -55,9 +58,10 @@ html {
 /* General styles */
 
 body {
-    background: var(--clr-light);
+    background: lightcyan;
     color: var(--clr-dark);
-    margin: 0;
+    margin: 0 auto;
+    padding: 0 auto;
     font-family: var(--ff-primary);
     font-size: var(--fs-body);
     line-height: 1.6;
@@ -67,9 +71,9 @@ h3 {
     color: burlywood;
 }
 
-p {
+/* p {
     color: var(--clr-light);
-}
+} */
 section {
     padding: 5em 2em;
 }
@@ -77,6 +81,7 @@ section {
 img {
     display: block;
     max-width: 100%;
+    border-radius: 30%;
 }
 
 strong { font-weight: var(--fw-bold) }
@@ -326,10 +331,11 @@ header {
         align-self: start;
         grid-column: -1 / 1;
         grid-row: 2;
-        text-align: right;
+        text-align: center;
         position: relative;
         left: -1.5em;
         width: calc(100% + 1.5em);
+        border-radius: 5px;
     }
 }
 
@@ -350,6 +356,39 @@ header {
         transform: scale(0.9);
     }
 }
+@keyframes fade{
+  from {
+    opacity: 0;
+    transform: translateX(12rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeOut{
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-12rem);
+  }
+}
+
+.spinner-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+}
+.tech-skills-div {
+    padding-top: 2.5rem;
+    opacity: 0;
+}
 /* home section */
 .home-section{
     background-color: red;
@@ -358,6 +397,9 @@ header {
 .home-section .h-100{
     padding:120px 0;
 }
+
+
+
 
 .home-img, .home-course, .spinner {
     border-radius: 50%;
@@ -386,12 +428,24 @@ header {
 }
 .home-course{
     position: absolute;
-
     width: 100%;
     height: 100%;
     z-index: 1;
+
     animation: spin 30s linear infinite;
 }
+.what-i-know {
+    cursor: pointer;
+
+}
+.home-course:active {
+    transform: scaleX(.08)
+}
+.spinner {
+    width: 400px;
+    height: 400px;
+}
+
 .home-course-item{
     position: absolute;
     height: 6rem;
@@ -404,6 +458,16 @@ header {
     font-size: 1rem;
     font-weight: var(--fw-bold);
     color: whitesmoke;
+}
+@media (max-width: 515px) {
+    .spinner {
+        width: 150px;
+
+    }
+    .home-course-item {
+        height: 4rem;
+        width: 4rem;
+    }
 }
 .home-course-item:nth-child(1){
     left:-40px;
@@ -530,9 +594,24 @@ header {
 
 }
 @media(max-width:575px){
+    .deploy-div a {
+        font-size: 1rem;
+    }
+    .row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 350px;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
 
     .my-work-item{
-        width: calc(100% - 30px);
+        width: 300px;
+    }
+    .my-work-item::before,
+    .my-work-item::after {
+        display: none;
     }
 }
 
@@ -542,8 +621,8 @@ header {
     overflow-x: auto;
 }
 .my-work-item{
-    min-width: 150px;
-    max-width: 400px;
+    min-width: 200px;
+    max-width: 450px;
     background-color: rgb(109, 226, 247);
     width: calc((100% / 3) - 30px);
     margin: 1rem;
@@ -559,14 +638,20 @@ header {
     position: absolute;
     left:0;
     top:0;
-    width:100%;
+    width: 100%;
     height: 100%;
     background-color: rgb(126, 235, 99);
     z-index: 2;
-
+    transition: all 1s ease;
+    padding: 1rem;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: var(--fw-bold);
 }
+
 .my-work-item:hover::before{
     transform: scale(1,0);
+
 }
 .my-work-item:hover::after{
     transform: scale(0,1);
@@ -577,96 +662,24 @@ header {
     content: 'Hotels App (React) \f594';
     font-family: "Font Awesome 5 Free";
     text-align: center;
-    font-size: 2rem;
-    font-weight: var(--fw-bold);
-    position: absolute;
-    left:0;
-    top:0;
-    width:100%;
-    height: 100%;
-    transition: all 1.25s ease;
+
 }
 .project-2::before,
 .project-2::after{
     content: 'Cocktails Recipe (Vanilla JS) \f561';
     font-family: "Font Awesome 5 Free";
-    text-align: center;
-    font-size: 2rem;
-    font-weight: var(--fw-bold);
-    position: absolute;
-    left:0;
-    top:0;
-    width:100%;
-    height: 100%;
-
-    transition: all 1.25s ease;
 }
 
 .project-3::before,
 .project-3::after{
     content: 'Calculator App (Vanilla JS) \f1ec';
     font-family: "Font Awesome 5 Free";
-    text-align: center;
-    font-size: 2rem;
-    font-weight: var(--fw-bold);
-    position: absolute;
-    left:0;
-    top:0;
-    width:100%;
-    height: 100%;
-
-    transition: all 1.25s ease;
 }
 
 .deploy-div {
     display: flex;
     justify-content: space-around;
 }
-/* .my-work-item h3{
-    color: white;
-    font-size: 20px;
-    font-weight: 500;
-    text-transform: capitalize;
-    margin:0 0 10px;
-} */
-
-/* .my-work {
-    background-color: rgb(27, 216, 216);
-    color: var(--clr-light);
-    text-align: center;
-    width: 100%;
-}
-
-.portfolio {
-    display: flex;
-    justify-content: space-evenly
-}
-
-.portfolio__item {
-    background: var(--clr-accent);
-    overflow: hidden;
-
-}
-
-.portfolio__img {
-    padding: 5px;
-    min-height: 100%;
-    transition:
-        transform 1000ms ease-in-out
-
-}
-
-.portfolio__item:focus {
-    position: relative;
-    z-index: 2;
-}
-
-.portfolio__img:hover
- {
-    transform: scale(1.2);
-    opacity: .8;
-} */
-
 
 
 
@@ -674,11 +687,16 @@ header {
 
 /* footer section */
 
+footer {
+        display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .footer {
     background: #111;
     color: var(--clr-accent);
     text-align: center;
-
 }
 
 .footer a {
@@ -688,6 +706,8 @@ header {
 .footer__link {
     font-size: var(--fs-h3);
     font-weight: var(--fw-bold);
+
+
 }
 
 .footer__link:hover,
