@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const express = require('express')
 const app = express()
 const nodemailer = require('nodemailer')
@@ -20,13 +22,15 @@ app.post('/', (req, res) => {
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-          user: 'plam89@ucla.edu'
+          user: process.env.ROUTING_EMAIL,
+          pass: process.env.EMAIL_PASSWORD
+
     }
   })
 
   const mailOptions = {
     from: req.body.email,
-    to: 'plam89@ucla.edu',
+    to: 'vanlamvan89@gmail.com',
     subject: `Message from ${req.body.email}: ${req.body.subject}`,
     text: req.body.message
   }
@@ -44,5 +48,5 @@ app.post('/', (req, res) => {
 
 
 app.listen(5000, () => {
-    console.log(`server running on port ${PORT}`)
+    console.log(`server running on dport ${PORT}`)
 })
