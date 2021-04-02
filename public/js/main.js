@@ -38,9 +38,6 @@ whatIKnow.addEventListener('click', () => {
 });
 
 
-
-
-
 const contactForm = document.querySelector('.contact-form')
 
 let name = document.getElementById('name')
@@ -58,8 +55,11 @@ contactForm.addEventListener('submit', (e) => {
     method: 'POST',
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: new URLSearchParams(formData).toString()
-    }).then(() => console.log('Form successfully submitted')).catch((error) =>
+    }).then(() => alert('Sent! All inquiries will be responded to within 1 business day.')).catch((error) =>
     alert(error))
+
+   document.querySelector('.contact-form').reset()
+
   // let formData = {
   //     name: name.value,
   //     email: email.value,

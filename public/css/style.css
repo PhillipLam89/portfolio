@@ -18,6 +18,9 @@ input:focus {
     border: none;
 }
 
+h4 {
+    text-align: center;
+}
 html {
     display: block;
     justify-content: center;
@@ -618,8 +621,7 @@ header {
         flex-direction: column;
         align-items: center;
         width: 350px;
-        overflow-x: hidden;
-        overflow-y: auto;
+
     }
 
     .my-work-item{
@@ -634,7 +636,9 @@ header {
 .my-work-section{
     background-color: lightcyan;
     padding-bottom: 50px;
-    overflow-x: auto;
+    display: flex;
+    justify-content: center;
+
 }
 .my-work-item{
     min-width: 200px;
