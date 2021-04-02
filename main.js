@@ -10,7 +10,7 @@ navToggle.addEventListener('click', () => {
 
   document.body.classList.toggle('nav-open');
   navItems.forEach((link, index) => {
-    link.style.animation ? link.style.animation = '' : link.style.animation = `navLinkFade 1.5s ease forwards ${index + 1 * index / 7 + 1}s`
+    link.style.animation ? link.style.animation = '' : link.style.animation = `navLinkFade 1.5s ease forwards ${index / 7 + 1}s`
   })
 
 });
