@@ -161,36 +161,30 @@
   </section>
 
 
-
-
   <!-- Footer -->
   <footer>
     <!-- replace with your own email address -->
     <a href="mailto:plam89@ucla.edu" class="footer__link">plam89@ucla.edu</a>
     <h3>714-417-0258</h3>
-      <ul class="social-list">
-        <li class="social-list__item">
-          <a class="social-list__link" href="https://codepen.io">
-            <i class="fab fa-codepen"></i>
-          </a>
-        </li>
-        <li class="social-list__item">
-          <a class="social-list__link" href="http://dribbble.com">
-            <i class="fab fa-dribbble"></i>
-          </a>
-        </li>
-        <li class="social-list__item">
-          <a class="social-list__link" href="https://twitter.com">
-            <i class="fab fa-twitter"></i>
-          </a>
-        </li>
-        <li class="social-list__item">
-          <a class="social-list__link" href="https://github.com/PhillipLam89">
-            <i class="fab fa-github"></i>
-          </a>
-        </li>
-      </ul>
   </footer>
+  <!-- Contact Form -->
+  <div class="contact-form-div">
+    <form action="/action_page.php">
+      <label for="fname">First Name</label>
+      <input required type="text" id="fname" name="firstname" placeholder="Your name..">
+
+      <label for="lname">Last Name</label>
+      <input required type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+      <label for="email">Email</label>
+      <input required type="email" id="email" name="email" placeholder="Your email">
+
+      <label for="subject">Subject</label>
+      <textarea required id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+      <input type="submit" value="Submit">
+    </form>
+  </div>
   <script src="./main.js"></script>
 </body>
 
