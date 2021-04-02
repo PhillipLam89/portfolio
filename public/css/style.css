@@ -663,7 +663,7 @@ header {
     height: 100%;
     background-color: rgb(126, 235, 99);
     z-index: 2;
-    transition: all 0.6s ease;
+    transition: all 0.3s ease;
     padding: 1rem;
     text-align: center;
     font-size: 2rem;
