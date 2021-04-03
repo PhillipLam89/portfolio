@@ -806,8 +806,9 @@ input[type=submit]:hover {
   top: 0;
   width: 130px;
   height: 74px;
-  background: url(../img/hotel-review-app.jpg);
-  animation: screen-shade infinite 7s ease;
+  /* background: url(../img/hire.jpg); */
+  background-image: url(../img/hire.jpg);
+  /* animation: screen-shade infinite 7s ease; */
   background-size: 300px 200px;
   background-position: 0px 0px;
 }
@@ -913,7 +914,7 @@ padding: 0 0 0 2px;
 
 @keyframes rotate {
   0% {
-    transform: rotateX(-20deg) rotateY(0deg) rotateZ(0deg);
+    transform: rotateX(20deg) rotateY(0deg) rotateZ(0deg);
   }
   5% {
     transform: rotateX(-20deg) rotateY(-20deg) rotateZ(0deg);
@@ -922,10 +923,10 @@ padding: 0 0 0 2px;
     transform: rotateX(30deg) rotateY(200deg) rotateZ(0deg);
   }
   25% {
-    transform: rotateX(-60deg) rotateY(150deg) rotateZ(0deg);
+    transform: rotateX(-20deg) rotateY(360deg) rotateZ(0deg);
   }
   60% {
-    transform: rotateX(-20deg) rotateY(130deg) rotateZ(0deg);
+    transform: rotateX(-20deg) rotateY(360deg) rotateZ(0deg);
   }
   65% {
     transform: rotateX(-20deg) rotateY(120deg) rotateZ(0deg);
