@@ -18,6 +18,9 @@ input:focus {
     border: none;
 }
 
+h4 {
+    text-align: center;
+}
 html {
     display: block;
     justify-content: center;
@@ -70,7 +73,7 @@ html {
 }
 
 body {
-    background: linear-gradient(-45deg, #ecf155, lightcyan, #e4a341);
+    background: lightcyan;
     background-size: 400% 400%;
     animation: gradient 8s ease infinite;
     color: var(--clr-dark);
@@ -82,7 +85,7 @@ body {
 }
 
 h3 {
-    color: burlywood;
+    color: goldenrod;
 }
 
 /* p {
@@ -354,22 +357,7 @@ header {
 }
 
 /* spinning image */
-@keyframes spin{
-    0%{
-        transform: rotate(0deg);
-    }
-    100%{
-        transform: rotate(360deg);
-    }
-}
-@keyframes zoomOutIn{
-    0%,100%{
-        transform: scale(1);
-    }
-    50%{
-        transform: scale(0.9);
-    }
-}
+
 @keyframes fade{
   from {
     opacity: 0;
@@ -399,7 +387,14 @@ header {
     justify-content: space-around;
 
 }
-.tech-skills-div {
+
+.skills-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.tech-skills-div,.tools-skills-div {
     padding-top: 2.5rem;
     opacity: 0;
 }
@@ -431,15 +426,7 @@ header {
     line-height: 1.2;
 }
 
-.home-img-inner{
-    max-width: 400px;
-    margin:auto;
-    position: relative;
-}
-.home-img-inner img{
-    width: 100%;
-    animation: zoomOutIn 10s linear infinite;
-}
+
 .home-course{
     position: absolute;
     width: 100%;
@@ -451,60 +438,9 @@ header {
 .what-i-know {
     cursor: pointer;
     color: black;
+    margin-top: 2rem;
 
 }
-.home-course:active {
-    transform: scaleX(.08)
-}
-.spinner {
-    width: 400px;
-    height: 400px;
-}
-
-.home-course-item{
-    position: absolute;
-    height: 6rem;
-    width: 6rem;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-transform: uppercase;
-    font-size: 1rem;
-    font-weight: var(--fw-bold);
-    color: whitesmoke;
-}
-@media (max-width: 515px) {
-    .spinner {
-        width: 150px;
-
-    }
-    .home-course-item {
-        height: 4rem;
-        width: 4rem;
-    }
-}
-.home-course-item:nth-child(1){
-    left:-40px;
-    top:calc(50% - 2.5rem);
-    background-color: red;
-}
-.home-course-item:nth-child(2){
-    right:-40px;
-    top:calc(50% - 2.5rem);
-    background-color: royalblue;
-}
-.home-course-item:nth-child(3){
-    top:-40px;
-    left: calc(50% - 2.5rem);
-    background-color: coral;
-}
-.home-course-item:nth-child(4){
-    bottom:-40px;
-    left: calc(50% - 2.5rem);
-    background-color: purple;
-}
-
 
 /*  My services section  */
 
@@ -618,8 +554,7 @@ header {
         flex-direction: column;
         align-items: center;
         width: 350px;
-        overflow-x: hidden;
-        overflow-y: auto;
+
     }
 
     .my-work-item{
@@ -634,7 +569,9 @@ header {
 .my-work-section{
     background-color: lightcyan;
     padding-bottom: 50px;
-    overflow-x: auto;
+    display: flex;
+    justify-content: center;
+
 }
 .my-work-item{
     min-width: 200px;
@@ -659,7 +596,7 @@ header {
     height: 100%;
     background-color: rgb(126, 235, 99);
     z-index: 2;
-    transition: all 0.6s ease;
+    transition: all 0.3s ease;
     padding: 1rem;
     text-align: center;
     font-size: 2rem;
@@ -781,4 +718,324 @@ input[type=submit]:hover {
   padding: 20px;
   box-shadow: var(--bs);
   transform: scale(0.85);
+}
+
+ /* spinnin mac book */
+
+ .macbook {
+  width: 150px;
+  height: 96px;
+
+  left: 50%;
+  top: 50%;
+  margin: -75px 0 0 -48px;
+  perspective: 500px;
+}
+
+.inner {
+  z-index: 20;
+  position: absolute;
+  width: 150px;
+  height: 96px;
+  left: 0;
+  top: 0;
+  transform-style: preserve-3d;
+  transform:rotateX(-20deg) rotateY(0deg) rotateZ(0deg);
+  animation: rotate infinite 7s ease;
+}
+.screen {
+  width: 150px;
+  height: 96px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-radius: 7px;
+  background: red;
+  transform-style: preserve-3d;
+  transform-origin: 50% 93px;
+  transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  animation: lid-screen infinite 7s ease;
+  background-image: linear-gradient(45deg, rgba(0,0,0,0.34) 0%,rgba(0,0,0,0) 100%);
+  background-position: left bottom;
+  background-size: 300px 300px;
+  box-shadow: inset 0 3px 7px rgba(255,255,255,0.5);
+}
+.screen .logo {
+  position: absolute;
+  width: 20px;
+  height: 24px;
+  left: 50%;
+  top: 50%;
+  margin: -12px 0 0 -10px;
+  transform: rotateY(180deg) translateZ(0.1px);
+}
+.screen .face-one {
+  width: 150px;
+  height: 96px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-radius: 7px;
+  background: red;
+  transform: translateZ(2px);
+  background-image: linear-gradient(45deg,rgba(0,0,0,0.24) 0%,rgba(0,0,0,0) 100%);
+}
+.screen .face-one .camera {
+  width: 3px;
+  height: 3px;
+  border-radius: 100%;
+  background: red;
+  position: absolute;
+  left: 50%;
+  top: 4px;
+  margin-left: -1.5px;
+}
+.screen .face-one .display {
+  width: 130px;
+  height: 74px;
+  margin: 10px;
+  background: url("http://www.pcmag.com/media/images/507124-mac-os-sierra.jpg?thumb=y&width=150&height=96") no-repeat center center #000;
+  background-size: 100% 100%;
+  border-radius: 1px;
+  position: relative;
+  box-shadow: inset 0 0 2px rgba(0,0,0,1);
+}
+.screen .face-one .display .shade {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 130px;
+  height: 74px;
+  background: url(../img/hotel-review-app.jpg);
+  animation: screen-shade infinite 7s ease;
+  background-size: 300px 200px;
+  background-position: 0px 0px;
+}
+.screen .face-one span {
+  position: absolute;
+  top: 85px;
+  left: 57px;
+  font-size: 6px;
+  color: white;
+}
+
+.body {
+  width: 150px;
+  height: 96px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-radius: 7px;
+  background: red;
+  transform-style: preserve-3d;
+  transform-origin: 50% bottom;
+  transform: rotateX(-90deg);
+  animation: lid-body infinite 7s ease;
+  background-image: linear-gradient(45deg, rgba(0,0,0,0.24) 0%,rgba(0,0,0,0) 100%);
+}
+.body .face-one {
+  width: 150px;
+  height: 96px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-radius: 7px;
+  transform-style: preserve-3d;
+  background: #dfdfdf;
+  animation: lid-keyboard-area infinite 7s ease;
+  transform: translateZ(-2px);
+  background-image: linear-gradient(30deg, rgba(0,0,0,0.24) 0%,rgba(0,0,0,0) 100%);
+}
+.body .touchpad {
+  width: 40px;
+  height: 31px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 4px;
+  margin: -44px 0 0 -18px;
+  background: #cdcdcd;
+  background-image: linear-gradient(30deg, rgba(0,0,0,0.24) 0%,rgba(0,0,0,0) 100%);
+
+}
+.body .keyboard {
+width: 130px;
+height: 45px;
+position: absolute;
+left: 7px;
+top: 41px;
+border-radius: 4px;
+transform-style: preserve-3d;
+background: #cdcdcd;
+background-image: linear-gradient(30deg, rgba(0,0,0,0.24) 0%,rgba(0,0,0,0) 100%);
+padding: 0 0 0 2px;
+}
+.keyboard .key {
+  width: 6px;
+  height: 6px;
+  background: #444;
+  float: left;
+  margin: 1px;
+  transform: translateZ(-2px);
+  border-radius: 2px;
+  box-shadow: 0 -2px 0 #222;
+  animation: keys infinite 7s ease;
+}
+.key.space {
+  width: 45px;
+}
+.key.f {
+  height: 3px;
+}
+.body .pad {
+  width: 5px;
+  height: 5px;
+  background: red;
+  border-radius: 100%;
+  position: absolute;
+}
+.pad.one {
+  left: 20px;
+  top: 20px;
+}
+.pad.two {
+  right: 20px;
+  top: 20px;
+}
+.pad.three {
+  right: 20px;
+  bottom: 20px;
+}
+.pad.four {
+  left: 20px;
+  bottom: 20px;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotateX(-20deg) rotateY(0deg) rotateZ(0deg);
+  }
+  5% {
+    transform: rotateX(-20deg) rotateY(-20deg) rotateZ(0deg);
+  }
+  20% {
+    transform: rotateX(30deg) rotateY(200deg) rotateZ(0deg);
+  }
+  25% {
+    transform: rotateX(-60deg) rotateY(150deg) rotateZ(0deg);
+  }
+  60% {
+    transform: rotateX(-20deg) rotateY(130deg) rotateZ(0deg);
+  }
+  65% {
+    transform: rotateX(-20deg) rotateY(120deg) rotateZ(0deg);
+  }
+  80% {
+    transform: rotateX(-20deg) rotateY(375deg) rotateZ(0deg);
+  }
+  85% {
+    transform: rotateX(-20deg) rotateY(357deg) rotateZ(0deg);
+  }
+  87% {
+    transform: rotateX(-20deg) rotateY(360deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(-20deg) rotateY(360deg) rotateZ(0deg);
+  }
+}
+
+@keyframes lid-screen {
+  0% {
+    transform: rotateX(0deg);
+    background-position: left bottom;
+  }
+  5% {
+    transform: rotateX(50deg);
+    background-position: left bottom;
+  }
+  20% {
+    transform: rotateX(-90deg);
+    background-position: -150px top;
+  }
+  25% {
+    transform: rotateX(15deg);
+    background-position: left bottom;
+  }
+  30% {
+    transform: rotateX(-5deg);
+    background-position: right top;
+  }
+  38% {
+    transform: rotateX(5deg);
+    background-position: right top;
+  }
+  48% {
+    transform: rotateX(0deg);
+    background-position: right top;
+  }
+  90% {
+    transform: rotateX(0deg);
+    background-position: right top;
+  }
+  100% {
+    transform: rotateX(0deg);
+    background-position: right center;
+  }
+}
+
+@keyframes lid-body {
+  0% {
+    transform: rotateX(-90deg);
+
+  }
+  50% {
+    transform: rotateX(-90deg);
+
+  }
+  100% {
+    transform: rotateX(-90deg);
+
+  }
+}
+
+@keyframes lid-keyboard-area {
+  0% {
+     background-color: #dfdfdf;
+  }
+  50% {
+    background-color: #bbb;
+  }
+  100% {
+    background-color: #dfdfdf;
+  }
+}
+@keyframes screen-shade {
+  0% {
+    background-position: -20px 0px;
+  }
+  5% {
+    background-position: -40px 0px;
+  }
+  20% {
+    background-position: 200px 0;
+  }
+  50% {
+    background-position: -200px 0;
+  }
+  80% {
+    background-position: 0px 0px;
+  }
+  85% {
+    background-position: -30px 0;
+  }
+  90% {
+    background-position: -20px 0;
+  }
+  100% {
+    background-position: -20px 0px;
+  }
+}
+
+.macbook {
+    margin-top: 0.25em
 }

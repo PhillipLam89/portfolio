@@ -1,3 +1,9 @@
+
+// this file is not necessary when deployed on Netlify due to serverless options
+
+
+//file used for localhost server testing purposes during development
+
 require('dotenv').config()
 
 const express = require('express')
@@ -13,7 +19,7 @@ app.use(express.json())
 
 
 app.get('/', (req,res) => {
-    res.sendFile(__dirname + '/index.html')
+    res.sendFile(__dirname + './public/index.html')
 })
 
 app.post('/', (req, res) => {

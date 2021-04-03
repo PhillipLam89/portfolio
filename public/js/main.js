@@ -29,16 +29,16 @@ whatIKnow.addEventListener('click', () => {
   whatIKnow.style.opacity = 0
 
   const displaySkills = document.querySelector('.tech-skills-div')
-
+  const displayTools = document.querySelector('.tools-skills-div')
   setTimeout( () => {
     displaySkills.style.animation = `fade 2s ease`
     displaySkills.style.opacity = 1
+
+    displayTools.style.animation = `fade 2s ease`
+    displayTools.style.opacity = 1
     whatIKnow.style.display = 'none'
   }, 1000)
 });
-
-
-
 
 
 const contactForm = document.querySelector('.contact-form')
@@ -58,8 +58,11 @@ contactForm.addEventListener('submit', (e) => {
     method: 'POST',
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: new URLSearchParams(formData).toString()
-    }).then(() => console.log('Form successfully submitted')).catch((error) =>
+    }).then(() => alert('Sent! All inquiries will be responded to within 1 business day.')).catch((error) =>
     alert(error))
+
+   document.querySelector('.contact-form').reset()
+
   // let formData = {
   //     name: name.value,
   //     email: email.value,
