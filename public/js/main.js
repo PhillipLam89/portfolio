@@ -29,10 +29,13 @@ whatIKnow.addEventListener('click', () => {
   whatIKnow.style.opacity = 0
 
   const displaySkills = document.querySelector('.tech-skills-div')
-
+  const displayTools = document.querySelector('.tools-skills-div')
   setTimeout( () => {
     displaySkills.style.animation = `fade 2s ease`
     displaySkills.style.opacity = 1
+
+    displayTools.style.animation = `fade 2s ease`
+    displayTools.style.opacity = 1
     whatIKnow.style.display = 'none'
   }, 1000)
 });
