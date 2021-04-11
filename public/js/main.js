@@ -2,6 +2,7 @@ const navToggle = document.querySelector('.nav-toggle');
 const navItems = document.querySelectorAll('.nav__item')
 const navLinks = document.querySelectorAll('.nav__link')
 const body = document.querySelector('body');
+const skillsImage = document.querySelector('.skills-img')
 
 const flipCard = document.querySelector('.card');
 const cardDiv = document.querySelector('.card__content');
@@ -27,7 +28,9 @@ navItems.forEach(link => {
 let isCardFlipped = false
 flipCard.addEventListener('click', () => {
     !isCardFlipped ? cardDiv.style.transform = `rotateY(.5turn)` : cardDiv.style.transform = `rotateY(1turn)`
+    skillsImage.style.opacity = 0
     isCardFlipped = !isCardFlipped
+    skillsImage.style.opacity = 1
 });
 
 
