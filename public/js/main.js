@@ -2,10 +2,11 @@ const navToggle = document.querySelector('.nav-toggle');
 const navItems = document.querySelectorAll('.nav__item')
 const navLinks = document.querySelectorAll('.nav__link')
 const body = document.querySelector('body');
-const skillsImage = document.querySelector('.skills-img')
+const skillsImage = document.querySelector('.card__content')
 
 const flipCard = document.querySelector('.card');
 const cardDiv = document.querySelector('.card__content');
+
 
 
 navToggle.addEventListener('click', () => {
@@ -27,10 +28,19 @@ navItems.forEach(link => {
 
 let isCardFlipped = false
 flipCard.addEventListener('click', () => {
+
+    if (!isCardFlipped) {
+      skillsImage.style.animation = `opacityFadeOut 1s ease`
+
+    }
+    else if (isCardFlipped) {
+      skillsImage.style.animation = `opacityFadeIn 1s ease`
+     skillsImage.style.opacity =  1
+    }
+
     !isCardFlipped ? cardDiv.style.transform = `rotateY(.5turn)` : cardDiv.style.transform = `rotateY(1turn)`
-    skillsImage.style.opacity = 0
+
     isCardFlipped = !isCardFlipped
-    skillsImage.style.opacity = 1
 });
 
 
