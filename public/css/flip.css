@@ -74,6 +74,7 @@
   border: 3px solid goldenrod;
   transform: var(--level-one);
   border-radius: 10px;
+  z-index: 1;
 }
 
 .card__title {
