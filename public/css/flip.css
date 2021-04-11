@@ -13,7 +13,7 @@
 
 *, *::before, *::after {
   box-sizing: border-box;
-  margin: 0;
+
 }
 
 .card {
@@ -52,18 +52,14 @@
   bottom: 0;
   left: 0;
   right: 0;
-
-  transform-style: preserve-3d;
-
-  align-content: center;
+  /* transform-style: preserve-3d; */
   border-radius: 10px;
- backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .card__title {
   font-size: 3.5rem;
   transform: var(--level-three);
-  order: 2;
   text-transform: uppercase;
 }
 
@@ -89,6 +85,5 @@
   transform: rotateY(.5turn);
   color: var(--clr);
   background: #333;
-  z-index: 500;
 
 }
