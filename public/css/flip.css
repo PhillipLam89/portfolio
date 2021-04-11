@@ -109,8 +109,8 @@
 
 }
 
-.card__back::before {
+/* .card__back::before {
   content: 'Click Me \f064';
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
-}
+} */
