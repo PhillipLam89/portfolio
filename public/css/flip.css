@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald:400,700');
+
+:root {
+  --level-one: translateZ(13rem);
+  --level-two: translateZ(6rem);
+  --level-three: translateZ(9rem);
+
+  --fw-normal: 400;
+  --fw-bold: 700;
+
+  --clr: #b7c9e5;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+
+.card {
+  margin: 3em auto;
+  max-width: 300px;
+
+}
+.card:hover {
+  cursor: pointer;
+}
+.card__content {
+  text-align: center;
+  position: relative;
+  padding: 15em 5em;
+  transition: transform 2s;
+  transform-style: preserve-3d;
+}
+
+.card__front,
+.card__back {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 5em 3em;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+
+  align-content: center;
+  border-radius: 10px;
+}
+
+.card__front {
+  background-color: var(--clr);
+  background-image: url(../img/tech.jpg);
+  background-size: cover;
+  background-attachment: local;
+  background-blend-mode: overlay;
+  background-position:center;
+  background-repeat: no-repeat;
+  color: #333;
+  border-radius: 10px;
+
+
+}
+
+.card__front::before {
+  content: 'Click Me \f064';
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border: 3px solid goldenrod;
+  transform: var(--level-one);
+  border-radius: 10px;
+}
+
+.card__title {
+  font-size: 3.5rem;
+  transform: var(--level-three);
+  order: 2;
+  text-transform: uppercase;
+}
+
+.card__subtitle {
+  transform: var(--level-two);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: .75rem;
+  font-weight: var(--fw-bold);
+  opacity: .7;
+}
+
+.card__body {
+  transform: var(--level-two);
+  font-weight: var(fw-normal);
+  font-size: 1.5rem;
+  line-height: 1.6;
+}
+
+
+
+.card__back {
+  transform: rotateY(.5turn);
+  color: var(--clr);
+  background: #333;
+
+}
+
+.card__back::before {
+  content: 'Click Me \f064';
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}

@@ -3,7 +3,8 @@ const navItems = document.querySelectorAll('.nav__item')
 const navLinks = document.querySelectorAll('.nav__link')
 const body = document.querySelector('body');
 
-const whatIKnow = document.querySelector('.what-i-know');
+const flipCard = document.querySelector('.card');
+const cardDiv = document.querySelector('.card__content');
 
 
 navToggle.addEventListener('click', () => {
@@ -23,22 +24,12 @@ navItems.forEach(link => {
   })
 })
 
-whatIKnow.addEventListener('click', () => {
-  whatIKnow.style.animation = 'fadeOut 2s ease'
-  whatIKnow.style.cursor = 'auto'
-  whatIKnow.style.opacity = 0
-
-  const displaySkills = document.querySelector('.tech-skills-div')
-  const displayTools = document.querySelector('.tools-skills-div')
-  setTimeout( () => {
-    displaySkills.style.animation = `fade 2s ease`
-    displaySkills.style.opacity = 1
-
-    displayTools.style.animation = `fade 2s ease`
-    displayTools.style.opacity = 1
-    whatIKnow.style.display = 'none'
-  }, 1000)
+let isCardFlipped = false
+flipCard.addEventListener('click', () => {
+    !isCardFlipped ? cardDiv.style.transform = `rotateY(.5turn)` : cardDiv.style.transform = `rotateY(1turn)`
+    isCardFlipped = !isCardFlipped
 });
+
 
 
 const contactForm = document.querySelector('.contact-form')
@@ -62,29 +53,5 @@ contactForm.addEventListener('submit', (e) => {
     alert(error))
 
    document.querySelector('.contact-form').reset()
-
-  // let formData = {
-  //     name: name.value,
-  //     email: email.value,
-  //     subject: subject.value,
-  //     message: message.value
-  // }
-
-
-  // let xhr =  new XMLHttpRequest()
-  // xhr.open('POST', '/')
-  // xhr.setRequestHeader('content-type', 'application/json')
-  // xhr.onload = function() {
-  //   console.log(xhr.responseText)
-  //   if (xhr.responseText === 'success') {
-  //     alert('sent')
-  //     name.value = ''
-  //     email.value = ''
-  //     subject.value = ''
-  //     message.value = ''
-  //   } else {
-  //     alert('UH OH SUMTHIN WONG')
-  //   }
-  // }
-  // xhr.send(JSON.stringify(formData))
-})
+  }
+)
