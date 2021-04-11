@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Oswald:400,700');
 
 :root {
-  --level-one: translateZ(13rem);
+  --level-one: translateZ(11rem);
   --level-two: translateZ(6rem);
   --level-three: translateZ(9rem);
 
@@ -32,6 +32,15 @@
   transition: transform 2s;
   transform-style: preserve-3d;
 }
+.skills-img {
+  height: 100%;
+}
+
+.card__title {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
 
 .card__front,
 .card__back {
@@ -40,27 +49,14 @@
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 5em 3em;
-  backface-visibility: hidden;
+  /* padding: 5em 3em; */
   transform-style: preserve-3d;
 
   align-content: center;
   border-radius: 10px;
+ backface-visibility: hidden;
 }
 
-.card__front {
-  background-color: var(--clr);
-  background-image: url(../img/tech.jpg);
-  background-size: cover;
-  background-attachment: local;
-  background-blend-mode: overlay;
-  background-position:center;
-  background-repeat: no-repeat;
-  color: #333;
-  border-radius: 10px;
-
-
-}
 
 .card__front::before {
   content: 'Click Me \f064';
@@ -106,6 +102,7 @@
   transform: rotateY(.5turn);
   color: var(--clr);
   background: #333;
+  z-index: 500;
 
 }
 
