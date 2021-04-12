@@ -26,18 +26,31 @@ navItems.forEach(link => {
   })
 })
 
+//skills div display for mobile
+
+const whatIKnow = document.querySelector('.what-i-know');
+
+whatIKnow.addEventListener('click', () => {
+  whatIKnow.style.animation = 'fadeOut 2s ease'
+  whatIKnow.style.cursor = 'auto'
+  whatIKnow.style.opacity = 0
+
+  const displaySkills = document.querySelector('.tech-skills-div')
+  const displayTools = document.querySelector('.tools-skills-div')
+  const skillsWrapper = document.querySelector('.skills-wrapper-mobile')
+  setTimeout( () => {
+    skillsWrapper.style.animation = `fade 2s ease`
+    skillsWrapper.style.opacity = 1
+    skillsWrapper.style.display = 'flex'
+    whatIKnow.style.display = 'none'
+  }, 1000)
+});
+
+
+
+//skills div display (3d flip card) for desktop
 let isCardFlipped = false
 flipCard.addEventListener('click', () => {
-
-    if (!isCardFlipped) {
-      skillsImage.style.animation = `opacityFadeOut 1s ease`
-
-    }
-    else if (isCardFlipped) {
-      skillsImage.style.animation = `opacityFadeIn 1s ease`
-     skillsImage.style.opacity =  1
-    }
-
     !isCardFlipped ? cardDiv.style.transform = `rotateY(.5turn)` : cardDiv.style.transform = `rotateY(1turn)`
 
     isCardFlipped = !isCardFlipped

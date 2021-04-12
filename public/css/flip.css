@@ -19,8 +19,28 @@
 .card {
   margin: 3em auto;
   max-width: 300px;
-
 }
+.skills-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+    .card {
+      display: none;
+    }
+    .what-i-know {
+      display: auto;
+    }
+}
+
+@media only screen and (orientation: portrait) {
+    .card {
+      display: none;
+    }
+}
+
 .card:hover {
   cursor: pointer;
 }

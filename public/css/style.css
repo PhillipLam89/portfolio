@@ -390,17 +390,26 @@ header {
 
 }
 
-.skills-wrapper {
+.skills-wrapper-mobile {
     display: flex;
     justify-content: space-evenly;
     width: 100%;
+    opacity: 0;
+    display: none;
+
 }
 
-.tech-skills-div,.tools-skills-div {
+.tech-skills-div-mobile ,.tools-skills-div-mobile  {
     padding-top: 2.5rem;
+
 }
 
+@media only screen and (min-width: 601px) {
+  .skills-wrapper-mobile, .what-i-know {
+      display: none;
 
+  }
+}
 
 
 
@@ -444,7 +453,8 @@ header {
 .what-i-know {
     cursor: pointer;
     color: black;
-    margin-top: 2rem;
+    margin: 2rem auto;
+    text-align: center;
 
 }
 
