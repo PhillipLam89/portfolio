@@ -645,6 +645,11 @@ header {
     content: 'Calculator App (Vanilla JS) \f1ec';
     font-family: "Font Awesome 5 Free";
 }
+.project-4::before,
+.project-4::after{
+    content: 'React Chat App \f4ad';
+    font-family: "Font Awesome 5 Free";
+}
 
 .deploy-div {
     display: flex;
