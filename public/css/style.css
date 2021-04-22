@@ -650,7 +650,11 @@ header {
     content: 'React Chat App \f4ad';
     font-family: "Font Awesome 5 Free";
 }
-
+.project-5::before,
+.project-5::after{
+    content: 'React/GraphQL Todo App \f022';
+    font-family: "Font Awesome 5 Free";
+}
 .deploy-div {
     display: flex;
     justify-content: space-around;
