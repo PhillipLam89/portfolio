@@ -590,10 +590,10 @@ header {
 
 }
 .my-work-item{
-    min-width: 200px;
+    min-width: 250px;
     max-width: 450px;
     background-color: rgb(109, 226, 247);
-    width: calc((100% / 3) - 30px);
+    width: calc((100% / 5) - 30px);
     margin: 1rem;
     padding: 1rem;
     border-radius: 10px;
