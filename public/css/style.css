@@ -655,6 +655,11 @@ header {
     content: 'React/GraphQL Todo App \f022';
     font-family: "Font Awesome 5 Free";
 }
+.project-6::before,
+.project-6::after{
+    content: 'Vanilla Music Player \f58f';
+    font-family: "Font Awesome 5 Free";
+}
 .deploy-div {
     display: flex;
     justify-content: space-around;
@@ -709,6 +714,11 @@ footer {
 .social-list__item {
     margin: 1.75em;
     font-size: 2rem;
+}
+
+.container {
+  overflow-x: auto;
+  width: 90%;
 }
 
 /* contact form */
