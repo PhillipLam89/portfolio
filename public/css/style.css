@@ -409,6 +409,7 @@ header {
       display: none;
 
   }
+
 }
 
 
@@ -550,29 +551,34 @@ header {
 }
 
 /* My Work */
-.row
+.container2, .row
  {
     display: flex;
     justify-content: space-evenly;
+
 }
+
+.container2 {
+ width: 80vw;
+}
+
 .section-title {
     display: flex;
     padding-bottom: 1rem;
-
-
 }
 @media(max-width:575px){
     .deploy-div a {
         font-size: 1rem;
     }
-    .row {
+    .container2 {
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 350px;
-
+        width: 350px
     }
-
+  .container {
+    overflow-x: unset !important;
+  }
     .my-work-item{
         width: 300px;
     }
@@ -716,11 +722,7 @@ footer {
     font-size: 2rem;
 }
 
-.container {
-  overflow-x: auto;
-  width: 90%;
 
-}
 
 /* contact form */
 
