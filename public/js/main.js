@@ -7,6 +7,24 @@ const skillsImage = document.querySelector('.card__content')
 const flipCard = document.querySelector('.card');
 const cardDiv = document.querySelector('.card__content');
 
+const wrapper = document.querySelector('.wrapper')
+const desktopSection = document.querySelector('.my-work-section')
+// Mobile detection-------------------------------------------------------------------------------
+
+let isUsingMobileDevice = navigator.maxTouchPoints > 0 ||
+                          navigator.msMaxTouchPoints > 0 ||
+                          window.orientation ? true : false
+        isUsingMobileDevice = (  //user sniffer agent is used as last resort only
+            /\b(BlackBerry|webOS|iPhone|IEMobile)\b/i.test(navigator.userAgent) ||
+            /\b(Android|Windows Phone|iPad|iPod)\b/i.test(navigator.userAgent)
+        );
+
+  //displays site for mobile devices if true:
+
+isUsingMobileDevice ? wrapper.style.display = 'none' : desktopSection.style.display = 'none'
+
+
+//-------------------------------------------------------------------------------------------------
 
 
 navToggle.addEventListener('click', () => {

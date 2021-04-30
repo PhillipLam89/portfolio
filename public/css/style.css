@@ -18,7 +18,7 @@ input:focus {
     border: none;
 }
 
-h4 {
+h4,h1 {
     text-align: center;
 }
 html {
@@ -551,20 +551,17 @@ header {
 }
 
 /* My Work */
+
 .container2, .row
  {
     display: flex;
     justify-content: space-evenly;
 
 }
-
-.container2 {
- width: 80vw;
-}
-
 .section-title {
     display: flex;
     padding-bottom: 1rem;
+    justify-content: center;
 }
 @media(max-width:575px){
     .deploy-div a {
@@ -607,80 +604,18 @@ header {
     position: relative;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);;
 }
-.my-work-item::before,
-.my-work-item::after{
-    content: '';
-    position: absolute;
-    border-radius: 10px;
-    left:0;
-    top:0;
-    width: 100%;
-    height: 100%;
-    background-color: rgb(126, 235, 99);
-    z-index: 2;
-    transition: all 0.3s ease;
-    padding: 1rem;
-    text-align: center;
-    font-size: 2rem;
-    font-weight: var(--fw-bold);
-}
-
-.my-work-item:hover::before{
-    transform: scale(1,0);
-
-}
-.my-work-item:hover::after{
-    transform: scale(0,1);
-}
-
-.project-1::before,
-.project-1::after{
-    content: 'Hotels App (React) \f594';
-    font-family: "Font Awesome 5 Free";
-    text-align: center;
-
-}
-.project-2::before,
-.project-2::after{
-    content: 'Cocktails Recipe (Vanilla JS) \f561';
-    font-family: "Font Awesome 5 Free";
-}
-
-.project-3::before,
-.project-3::after{
-    content: 'Calculator App (Vanilla JS) \f1ec';
-    font-family: "Font Awesome 5 Free";
-}
-.project-4::before,
-.project-4::after{
-    content: 'React Chat App \f4ad';
-    font-family: "Font Awesome 5 Free";
-}
-.project-5::before,
-.project-5::after{
-    content: 'React/GraphQL Todo App \f022';
-    font-family: "Font Awesome 5 Free";
-}
-.project-6::before,
-.project-6::after{
-    content: 'Vanilla Music Player \f58f';
-    font-family: "Font Awesome 5 Free";
-}
-.deploy-div {
-    display: flex;
-    justify-content: space-around;
-}
-
-
-
 
 
 /* footer section */
 
 footer {
-        display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: flex;
+    font-weight: bolder;
+    align-items: flex-start;
+    box-shadow: rgba(50, 50, 93, 0.25) 15px 50px 100px -20px, rgba(184, 10, 10, 0.3) 0px 30px 60px -30px, rgba(39, 133, 228, 0.35) 0px -2px 6px 0px inset;
+    margin: 2rem;
+    border-radius: 15px;
+    justify-content: space-around;
 }
 
 .footer {
@@ -755,196 +690,11 @@ input[type=submit]:hover {
   background-color: #f2f2f2;
   padding: 20px;
   box-shadow: var(--bs);
-  transform: scale(0.85);
+  margin: 1.5rem auto;
+  box-shadow: rgba(50, 50, 93, 0.25) 15px 50px 100px -20px, rgba(184, 10, 10, 0.3) 0px 30px 60px -30px, rgba(39, 133, 228, 0.35) 0px -2px 6px 0px inset;
 }
 
- /* spinnin mac book */
 
- .macbook {
-  width: 150px;
-  height: 96px;
-
-  left: 50%;
-  top: 50%;
-  margin: -75px 0 0 -48px;
-  perspective: 500px;
-}
-
-.inner {
-  z-index: 20;
-  position: absolute;
-  width: 150px;
-  height: 96px;
-  left: 0;
-  top: 0;
-  transform-style: preserve-3d;
-  transform:rotateX(-20deg) rotateY(0deg) rotateZ(0deg);
-  animation: rotate infinite 7s ease;
-}
-.screen {
-  width: 150px;
-  height: 96px;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  border-radius: 7px;
-  background: red;
-  transform-style: preserve-3d;
-  transform-origin: 50% 93px;
-  transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
-  animation: lid-screen infinite 7s ease;
-  background-image: linear-gradient(45deg, rgba(0,0,0,0.34) 0%,rgba(0,0,0,0) 100%);
-  background-position: left bottom;
-  background-size: 300px 300px;
-  box-shadow: inset 0 3px 7px rgba(255,255,255,0.5);
-}
-.screen .logo {
-  position: absolute;
-  width: 20px;
-  height: 24px;
-  left: 50%;
-  top: 50%;
-  margin: -12px 0 0 -10px;
-  transform: rotateY(180deg) translateZ(0.1px);
-}
-.screen .face-one {
-  width: 150px;
-  height: 96px;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  border-radius: 7px;
-  background: red;
-  transform: translateZ(2px);
-  background-image: linear-gradient(45deg,rgba(0,0,0,0.24) 0%,rgba(0,0,0,0) 100%);
-}
-.screen .face-one .camera {
-  width: 3px;
-  height: 3px;
-  border-radius: 100%;
-  background: red;
-  position: absolute;
-  left: 50%;
-  top: 4px;
-  margin-left: -1.5px;
-}
-.screen .face-one .display {
-  width: 130px;
-  height: 74px;
-  margin: 10px;
-  border-radius: 1px;
-  position: relative;
-  box-shadow: inset 0 0 2px rgba(0,0,0,1);
-}
-.screen .face-one .display .shade {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 130px;
-  height: 74px;
-  background-image: url(../img/hire.jpg);
-  background-size: 300px 200px;
-  background-position: 0px 0px;
-}
-.screen .face-one span {
-  position: absolute;
-  top: 85px;
-  left: 57px;
-  font-size: 6px;
-  color: white;
-}
-
-.body {
-  width: 150px;
-  height: 96px;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  border-radius: 7px;
-  background: red;
-  transform-style: preserve-3d;
-  transform-origin: 50% bottom;
-  transform: rotateX(-90deg);
-  animation: lid-body infinite 7s ease;
-  background-image: linear-gradient(45deg, rgba(0,0,0,0.24) 0%,rgba(0,0,0,0) 100%);
-}
-.body .face-one {
-  width: 150px;
-  height: 96px;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  border-radius: 7px;
-  transform-style: preserve-3d;
-  background: #dfdfdf;
-  animation: lid-keyboard-area infinite 7s ease;
-  transform: translateZ(-2px);
-  background-image: linear-gradient(30deg, rgba(0,0,0,0.24) 0%,rgba(0,0,0,0) 100%);
-}
-.body .touchpad {
-  width: 40px;
-  height: 31px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  border-radius: 4px;
-  margin: -44px 0 0 -18px;
-  background: #cdcdcd;
-  background-image: linear-gradient(30deg, rgba(0,0,0,0.24) 0%,rgba(0,0,0,0) 100%);
-
-}
-.body .keyboard {
-width: 130px;
-height: 45px;
-position: absolute;
-left: 7px;
-top: 41px;
-border-radius: 4px;
-transform-style: preserve-3d;
-background: #cdcdcd;
-background-image: linear-gradient(30deg, rgba(0,0,0,0.24) 0%,rgba(0,0,0,0) 100%);
-padding: 0 0 0 2px;
-}
-.keyboard .key {
-  width: 6px;
-  height: 6px;
-  background: #444;
-  float: left;
-  margin: 1px;
-  transform: translateZ(-2px);
-  border-radius: 2px;
-  box-shadow: 0 -2px 0 #222;
-  animation: keys infinite 7s ease;
-}
-.key.space {
-  width: 45px;
-}
-.key.f {
-  height: 3px;
-}
-.body .pad {
-  width: 5px;
-  height: 5px;
-  background: red;
-  border-radius: 100%;
-  position: absolute;
-}
-.pad.one {
-  left: 20px;
-  top: 20px;
-}
-.pad.two {
-  right: 20px;
-  top: 20px;
-}
-.pad.three {
-  right: 20px;
-  bottom: 20px;
-}
-.pad.four {
-  left: 20px;
-  bottom: 20px;
-}
 
 @keyframes rotate {
   0% {
@@ -1071,6 +821,30 @@ padding: 0 0 0 2px;
   }
 }
 
+
 .macbook {
     margin-top: 0.25em
+}
+
+.direct-contact-div {
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+}
+
+@media only screen and (min-width: 601px) {
+  .direct-contact-div {
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+  }
+  h5 {
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .direct-contact-div {
+    display: block
+
+  }
 }
